@@ -1,0 +1,15 @@
+{
+  "name": "mcp-sdk-js-playground",
+  "version": "1.0.0",
+  "description": "A playground for experimenting with the MCP SDK in JavaScript. Just testing, learning, and having fun. 🚀",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.15.0"
+  }
+}
