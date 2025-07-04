@@ -13,13 +13,28 @@ import {
 
 
   server.tool("get-weather", {location: z.string()}, async ({location}) => {
-    content:[
-        {
-            type:"text",
-            text: `The weather in ${location} is sunny and 70 degrees.`
-        }
-    ]
+    return {
+      content:[
+          {
+              type:"text",
+              text: `The weather in ${location} is sunny and 70 degrees.`
+          }
+      ]
+    };
   });
+
+  server.resource(
+    "weather",
+    new ResourceTemplate("weather://{location}", { list: undefined }),
+    async (uri, { location }) => ({
+      contents: [
+        {
+          uri: uri.href,
+          text: `Weather data for ${location}: Sunny, 72°F`,
+        },
+      ],
+    })
+  );
 
   // Create a communication channel using stdin/stdout
   const transport = new StdioServerTransport();
