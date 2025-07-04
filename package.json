@@ -4,7 +4,8 @@
   "description": "A playground for experimenting with the MCP SDK in JavaScript. Just testing, learning, and having fun. 🚀",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "DANGEROUSLY_OMIT_AUTH=true npx @modelcontextprotocol/inspector node ./index.mjs"
   },
   "keywords": [],
   "author": "",

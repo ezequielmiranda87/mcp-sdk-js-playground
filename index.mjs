@@ -23,6 +23,7 @@ import {
     };
   });
 
+  // Resource implementation
   server.resource(
     "weather",
     new ResourceTemplate("weather://{location}", { list: undefined }),
@@ -35,6 +36,30 @@ import {
       ],
     })
   );
+
+    // Prompt implementation
+    server.prompt(
+        "weather_report",
+        { location: z.string() },
+        async ({ location }) => ({
+        messages: [
+            {
+            role: "assistant",
+            content: {
+                type: "text",
+                text: "You are a weather reporter.",
+            },
+            },
+            {
+            role: "user",
+            content: {
+                type: "text",
+                text: `Weather report for ${location}?`,
+            },
+            },
+        ],
+        })
+    );
 
   // Create a communication channel using stdin/stdout
   const transport = new StdioServerTransport();
