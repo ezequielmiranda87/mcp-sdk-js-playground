@@ -5,12 +5,15 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start:dev": "DANGEROUSLY_OMIT_AUTH=true npx @modelcontextprotocol/inspector node ./index.mjs"
+    "start:dev": "DANGEROUSLY_OMIT_AUTH=true npx @modelcontextprotocol/inspector node ./index.mjs",
+    "start:remote-tiny-agent": "npx @huggingface/tiny-agents run ./agent-playwright"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.15.0"
+    "@huggingface/tiny-agents": "^0.3.1",
+    "@modelcontextprotocol/sdk": "^1.15.0",
+    "dotenv": "^17.2.0"
   }
 }
